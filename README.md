@@ -122,9 +122,28 @@ Climate_Stations_3D<- plot_ly(
   type = "scatter3d", mode = "markers", 
   marker = list(size = 5, color = ~t_mean, colorscale = "Viridis")
 )
-dev.off()
+# dev.off()
 
 #b Summary of output
 
 #the summary of output has been done and interpretted above
 #the model explain 81.1% of the variation in latitude and altitude
+
+### Call:
+## lm(formula = t_mean ~ altitude + lat, data = clim_frar)
+
+# Residuals:
+#    Min       1Q   Median       3Q      Max 
+# -1.80839 -0.27488  0.01524  0.35388  2.70691 
+
+## Coefficients:
+#              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) 38.0696666  2.7320520  13.934 4.06e-14 ***
+altitude    -0.0063864  0.0009466  -6.746 2.52e-07 ***
+lat         -0.5496529  0.0584839  -9.398 3.72e-10 ***
+---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.7628 on 28 degrees of freedom
+# Multiple R-squared:  0.8111,	Adjusted R-squared:  0.7976 
+# F-statistic:  60.1 on 2 and 28 DF,  p-value: 7.389e-11
