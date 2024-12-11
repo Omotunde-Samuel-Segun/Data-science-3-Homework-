@@ -1,4 +1,5 @@
 # Data-science-3-Homework-
+#Omotunde S. Segun
 library(tidyverse)
 library(broom)
 #load data set
@@ -101,7 +102,13 @@ model_new_stat <- predict(Mean_Temp_model_reduced, newdata = new_stations, inter
 
 model_new_stat
 
-#According to the predictions, the mean temperature for both Mont_Ventoux and Pic-du-midi are 6.05 and -3.79  respectively which differe from the measured one on the table, which has value of 3.6 and -1.2 respectively
+#According to the predictions, the mean temperature for both Mont_Ventoux and Pic-du-midi are 6.05 and -3.79   respectively which differe from the measured one on the table, which has value of 3.6 and -1.2 respectively. 
+
+## Below is the result and its confidence interval
+
+##        fit       lwr      upr
+## 1  6.056723  3.974229 8.139217
+## 2 -3.791931 -9.040129 1.456266
 
 #EXERCISE 3: Evaluate model result by
 
