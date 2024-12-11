@@ -114,15 +114,25 @@ model_new_stat
 
 #a 3D scatter plot
 
-install.packages("plotly")
-library(plotly)
+# Load the scatterplot3d package
+library(scatterplot3d)
 
-Climate_Stations_3D<- plot_ly(
-  data = clim_frar, x = ~altitude, y = ~lat, z = ~t_mean, 
-  type = "scatter3d", mode = "markers", 
-  marker = list(size = 5, color = ~t_mean, colorscale = "Viridis")
+# Create a 3D scatter plot
+scatter_3d <- with(
+# Variables for x, y, z axes
+  clim_frar, 
+  scatterplot3d(
+    altitude, lat, t_mean, 
+# Solid points
+    pch = 16,
+# Highlight 3D effect with color gradient
+    highlight.3d = TRUE, 
+# Viewing angle
+    angle = 45                  
+  )
 )
-# dev.off()
+)
+
 
 #b Summary of output
 
